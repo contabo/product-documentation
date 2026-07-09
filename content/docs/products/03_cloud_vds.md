@@ -22,8 +22,6 @@ toc: true
 
 Cloud VDS occupies the performance tier between Cloud VPS and fully bare-metal Dedicated Servers. The defining difference from VPS is that every VDS instance runs on **dedicated physical CPU cores** — not shared virtual cores. This means neighboring tenants on the same host cannot cause performance degradation ("noisy neighbor" problem). RAM is also 100% reserved. VDS plans are ideal for workloads that need predictable, consistent compute without the cost and management overhead of a full bare-metal server.
 
-A 20% discount is currently available on all VDS plans with an annual commitment.
-
 ---
 
 ## Ideal Use Cases
@@ -39,15 +37,15 @@ A 20% discount is currently available on all VDS plans with an annual commitment
 
 ---
 
-## Plans & Pricing
+## Plans
 
-| Model | Physical CPU Cores | CPU Model | RAM | NVMe Storage | Network Port | Traffic | Monthly Price | Annual Price (~20% off) |
-|---|---|---|---|---|---|---|---|---|
-| Cloud VDS S | 3 cores | AMD EPYC 7282, 2.8 GHz | 24 GB | 180 GB NVMe | 250 Mbit/s | Unlimited* | €42.99 | **~€34.40** |
-| Cloud VDS M | 4 cores | AMD EPYC 7282, 2.8 GHz | 32 GB | 240 GB NVMe | 500 Mbit/s | Unlimited* | €55.99 | **~€44.80** |
-| Cloud VDS L | 6 cores | AMD EPYC 7282, 2.8 GHz | 48 GB | 360 GB NVMe | 750 Mbit/s | Unlimited* | €79.99 | **~€64.00** |
-| Cloud VDS XL | 8 cores | AMD EPYC 7282, 2.8 GHz | 64 GB | 480 GB NVMe | 1 Gbit/s | Unlimited* | €102.99 | **~€82.40** |
-| Cloud VDS XXL | 12 cores | AMD EPYC 7282, 2.8 GHz | 96 GB | 720 GB NVMe | 1 Gbit/s | Unlimited* | €149.99 | **~€119.00** |
+| Model | Physical CPU Cores | CPU Model | RAM | NVMe Storage | Network Port | Traffic |
+|---|---|---|---|---|---|---|
+| Cloud VDS S | 3 cores | AMD EPYC 7282, 2.8 GHz | 24 GB | 180 GB NVMe | 250 Mbit/s | Unlimited* |
+| Cloud VDS M | 4 cores | AMD EPYC 7282, 2.8 GHz | 32 GB | 240 GB NVMe | 500 Mbit/s | Unlimited* |
+| Cloud VDS L | 6 cores | AMD EPYC 7282, 2.8 GHz | 48 GB | 360 GB NVMe | 750 Mbit/s | Unlimited* |
+| Cloud VDS XL | 8 cores | AMD EPYC 7282, 2.8 GHz | 64 GB | 480 GB NVMe | 1 Gbit/s | Unlimited* |
+| Cloud VDS XXL | 12 cores | AMD EPYC 7282, 2.8 GHz | 96 GB | 720 GB NVMe | 1 Gbit/s | Unlimited* |
 
 > Additional NVMe storage configurations are available beyond the base amounts listed above.  
 > \* Incoming traffic: unlimited and unmetered. Outgoing: fair usage policy applies. Contabo reserves the right to throttle servers with exceptionally high or disruptive usage.
@@ -126,7 +124,7 @@ EU (default) · USA (East & West) · United Kingdom · Singapore · Japan · Aus
 | Minimum initial contract | 1 month |
 | Following contracts | Equal to initial term |
 | Billing cycles | Monthly, quarterly, 6-month, annual |
-| Annual discount | ~20% off (currently active promotion) |
+| Annual discount | Available |
 | Setup fee | None on standard configurations |
 | Cancellation notice | None (pre-paid) / 4 weeks (post-paid) |
 | Payment | Pre-paid or post-paid |
@@ -157,4 +155,4 @@ Contabo provides **unmanaged hosting**. Support covers network, hardware, and in
 
 ---
 
-*Prices listed in EUR, excluding VAT. Specifications subject to change — verify current details at contabo.com.*
+*Specifications subject to change — verify current details at contabo.com.*

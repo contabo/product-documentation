@@ -22,7 +22,7 @@ toc: true
 
 Storage VPS plans are purpose-built for workloads that require large amounts of affordable SSD storage inside a full virtual machine. Unlike Object Storage (which is accessed via API), Storage VPS gives you a complete Linux or Windows environment with root access and a large SSD block device — ideal for high-capacity workloads that don't demand extreme I/O speed. All plans include unlimited traffic and are priced competitively against equivalent Cloud VPS tiers, with the storage-to-price ratio as the primary differentiator.
 
-**Storage VPS 20 carries the "Unbeatable Value" badge on Contabo's website**, delivering 400 GB SSD, 3 vCPUs, and 8 GB RAM for €7.00/month.
+**Storage VPS 20 carries the "Unbeatable Value" badge on Contabo's website**, delivering 400 GB SSD, 3 vCPUs, and 8 GB RAM.
 
 ---
 
@@ -39,15 +39,15 @@ Storage VPS plans are purpose-built for workloads that require large amounts of 
 
 ---
 
-## Plans & Pricing
+## Plans
 
-| Model | vCPU Cores | RAM | SSD Storage | Network Port | Traffic | Price/month |
-|---|---|---|---|---|---|---|
-| Storage VPS 10 | 2 vCPUs | 4 GB | 300 GB SSD | 200 Mbit/s | Unlimited* | **€4.50** |
-| Storage VPS 20 ⭐ | 3 vCPUs | 8 GB | 400 GB SSD | 300 Mbit/s | Unlimited* | **€7.00** |
-| Storage VPS 30 | 6 vCPUs | 18 GB | 1 TB SSD | 600 Mbit/s | Unlimited* | **€14.00** |
-| Storage VPS 40 | 8 vCPUs | 30 GB | 1.2 TB SSD | 800 Mbit/s | Unlimited* | **€25.00** |
-| Storage VPS 50 | 14 vCPUs | 50 GB | 1.4 TB SSD | 1 Gbit/s | Unlimited* | **€37.00** |
+| Model | vCPU Cores | RAM | SSD Storage | Network Port | Traffic |
+|---|---|---|---|---|---|
+| Storage VPS 10 | 2 vCPUs | 4 GB | 300 GB SSD | 200 Mbit/s | Unlimited* |
+| Storage VPS 20 ⭐ | 3 vCPUs | 8 GB | 400 GB SSD | 300 Mbit/s | Unlimited* |
+| Storage VPS 30 | 6 vCPUs | 18 GB | 1 TB SSD | 600 Mbit/s | Unlimited* |
+| Storage VPS 40 | 8 vCPUs | 30 GB | 1.2 TB SSD | 800 Mbit/s | Unlimited* |
+| Storage VPS 50 | 14 vCPUs | 50 GB | 1.4 TB SSD | 1 Gbit/s | Unlimited* |
 
 > ⭐ "Unbeatable Value" — Contabo's recommended Storage VPS plan.  
 > \* Incoming traffic: unlimited and unmetered. Outgoing: fair usage policy applies. Contabo reserves the right to throttle servers with exceptionally high or disruptive usage.
@@ -149,4 +149,4 @@ Contabo provides **unmanaged hosting**. Support covers network, hardware, and in
 
 ---
 
-*Prices listed in EUR, excluding VAT. Specifications subject to change — verify current details at contabo.com.*
+*Specifications subject to change — verify current details at contabo.com.*

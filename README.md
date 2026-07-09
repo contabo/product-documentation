@@ -59,22 +59,26 @@ The files under `content/docs/products/`, `content/docs/guides/` and `content/do
 
 ## Local development
 
-**Prerequisites:** Node.js ≥ 20 LTS and Hugo extended ≥ 0.120.
+**Prerequisite:** [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+
+All local development runs inside Docker — no Node.js or Hugo installation required on your machine.
 
 ```bash
-# Install dependencies
-npm install
+# First run — builds the image (takes ~1 min)
+docker compose up --build
 
-# Start the development server with live reload
-npm run dev
+# Subsequent runs
+docker compose up
 ```
 
-Open `http://localhost:1313` in your browser. The page refreshes automatically whenever you save a content file.
+Open `http://localhost:1313/Product-Documentation/` in your browser. **Live reload is on by default** — save any file under `content/`, `layouts/`, `assets/`, or `config/` and the browser refreshes automatically within a second or two.
+
+Stop the server with `Ctrl+C`.
+
+If you change `package.json` or `package-lock.json`, rebuild the image:
 
 ```bash
-# Build the site locally (same output as CI)
-hugo --minify --gc
-# Output goes to ./public/
+docker compose up --build
 ```
 
 ---
