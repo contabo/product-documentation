@@ -4,3 +4,5 @@
 node_modules
 public
 resources
+hugo_stats.json
+.DS_Store

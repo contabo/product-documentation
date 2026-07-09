@@ -40,17 +40,17 @@ Contabo's Dedicated Server lineup includes AMD Ryzen consumer-grade, AMD EPYC Ge
 
 ---
 
-## Plans & Pricing
+## Plans
 
-| Server | CPU | Cores / Freq. | Base RAM | Max RAM | Base Storage | Port | Traffic | Price/month |
-|---|---|---|---|---|---|---|---|---|
-| AMD Ryzen 12 Cores | AMD Ryzen 9 7900 | 12 × 3.70 GHz | 64 GB | 128 GB | 1 TB NVMe | 1 Gbit/s | Unlimited* | **€96.00** |
-| AMD Genoa 24 Cores | AMD EPYC 9224 | 24 × 2.50 GHz (3.70 max) | 128 GB REG ECC | 768 GB | 2 × 1 TB SSD | 1 Gbit/s | Unlimited* | **€169.00** |
-| AMD Turin 32 Cores *(Special Offer)* | AMD EPYC 9355P | 32 × 3.55 GHz (4.20 max) | 128 GB | 768 GB | 2 × 1 TB NVMe | 1 Gbit/s (10 Gbit/s available) | Unlimited* | **from €249.00** |
-| AMD Turin 64 Cores | AMD EPYC 9555P | 64 × 3.20 GHz (4.20 max) | 192 GB | 1,152 GB | 2 × 1 TB NVMe | 1 Gbit/s (10 Gbit/s available) | Unlimited* | **€666.00** |
+| Server | CPU | Cores / Freq. | Base RAM | Max RAM | Base Storage | Port | Traffic |
+|---|---|---|---|---|---|---|---|
+| AMD Ryzen 12 Cores | AMD Ryzen 9 7900 | 12 × 3.70 GHz | 64 GB | 128 GB | 1 TB NVMe | 1 Gbit/s | Unlimited* |
+| AMD Genoa 24 Cores | AMD EPYC 9224 | 24 × 2.50 GHz (3.70 max) | 128 GB REG ECC | 768 GB | 2 × 1 TB SSD | 1 Gbit/s | Unlimited* |
+| AMD Turin 32 Cores *(Special Offer)* | AMD EPYC 9355P | 32 × 3.55 GHz (4.20 max) | 128 GB | 768 GB | 2 × 1 TB NVMe | 1 Gbit/s (10 Gbit/s available) | Unlimited* |
+| AMD Turin 64 Cores | AMD EPYC 9555P | 64 × 3.20 GHz (4.20 max) | 192 GB | 1,152 GB | 2 × 1 TB NVMe | 1 Gbit/s (10 Gbit/s available) | Unlimited* |
 
 > Additional RAM, storage, and GPU configurations are available for all models.  
-> Outlet Servers offer discounted pricing on selected hardware configurations.  
+> Outlet Servers are also available on selected hardware configurations.  
 > \* Incoming traffic: unlimited and unmetered. Outgoing: fair usage policy applies.
 
 ---
@@ -95,8 +95,6 @@ NVIDIA GeForce and Tesla GPUs can be added to Dedicated Servers:
 - Suitable for AI/ML training, data analytics, rendering, and high-performance parallel processing
 - Full CUDA support
 - Combined with EPYC CPUs, large RAM configurations, and fast NVMe storage for balanced AI workloads
-
-For GPU-specific cloud instances, see the [GPU Cloud documentation](05_gpu_cloud.md).
 
 ---
 
@@ -181,4 +179,4 @@ Contabo provides **unmanaged hosting**. Support covers network, hardware failure
 
 ---
 
-*Prices listed in EUR, excluding VAT. Specifications subject to change — verify current details at contabo.com.*
+*Specifications subject to change — verify current details at contabo.com.*

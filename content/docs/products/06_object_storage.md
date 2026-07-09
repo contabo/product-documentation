@@ -40,27 +40,6 @@ Unlike Storage VPS (which gives you a full virtual machine with a block disk), O
 
 ---
 
-## Plans & Pricing
-
-Pricing is billed per **250 GB slice** per month. You pay only for the storage tiers you use.
-
-### Europe Region
-
-| Storage Capacity | Price/month |
-|---|---|
-| 250 GB | **€2.49** |
-| 500 GB | **€4.98** |
-| 1 TB | **€9.96** |
-| 2 TB | **€19.92** |
-| 5 TB | **€49.80** |
-| 10 TB | **€99.60** |
-
-> Custom sizes can be ordered by selecting the number of 250 GB slices needed.  
-> US and Asia regions are also available — check contabo.com for current regional pricing.  
-> **Egress (outbound transfer) is included in the flat monthly price** — no separate data transfer charges apply.
-
----
-
 ## Key Features
 
 | Feature | Details |
@@ -189,4 +168,4 @@ Contabo provides infrastructure-level support — network, hardware, and the Obj
 
 ---
 
-*Prices listed in EUR, excluding VAT. Specifications subject to change — verify current details at contabo.com.*
+*Specifications subject to change — verify current details at contabo.com.*

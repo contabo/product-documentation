@@ -22,7 +22,7 @@ toc: true
 
 Cloud VPS is Contabo's flagship product and the entry point for most customers. These are KVM-based virtualized servers with dedicated resource allocations — offering shared vCPU cores, generous RAM, and a choice between Gen 4 PCIe NVMe or standard SSD storage. The entire lineup was redesigned in May 2025 to deliver more performance per euro than any comparable offering on the market.
 
-**Cloud VPS 20 is Contabo's most popular plan**, offering 6 vCPUs, 12 GB RAM, and 100 GB NVMe for €7.00/month.
+**Cloud VPS 20 is Contabo's most popular plan**, offering 6 vCPUs, 12 GB RAM, and 100 GB NVMe.
 
 ---
 
@@ -39,16 +39,16 @@ Cloud VPS is Contabo's flagship product and the entry point for most customers. 
 
 ---
 
-## Plans & Pricing
+## Plans
 
-| Model | vCPU Cores | RAM | NVMe Storage | SSD Alternative | Network Port | Traffic | Price/month |
-|---|---|---|---|---|---|---|---|
-| Cloud VPS 10 | 4 vCPUs | 8 GB | 75 GB NVMe | 150 GB SSD | 200 Mbit/s | Unlimited* | **€4.50** |
-| Cloud VPS 20 ⭐ | 6 vCPUs | 12 GB | 100 GB NVMe | 200 GB SSD | 300 Mbit/s | Unlimited* | **€7.00** |
-| Cloud VPS 30 | 8 vCPUs | 24 GB | 200 GB NVMe | 400 GB SSD | 600 Mbit/s | Unlimited* | **€14.00** |
-| Cloud VPS 40 | 12 vCPUs | 48 GB | 250 GB NVMe | 500 GB SSD | 800 Mbit/s | Unlimited* | **€25.00** |
-| Cloud VPS 50 | 16 vCPUs | 64 GB | 300 GB NVMe | 600 GB SSD | 1 Gbit/s | Unlimited* | **€37.00** |
-| Cloud VPS 60 | 18 vCPUs | 96 GB | 350 GB NVMe | 700 GB SSD | 1 Gbit/s | Unlimited* | **€49.00** |
+| Model | vCPU Cores | RAM | NVMe Storage | SSD Alternative | Network Port | Traffic |
+|---|---|---|---|---|---|---|
+| Cloud VPS 10 | 4 vCPUs | 8 GB | 75 GB NVMe | 150 GB SSD | 200 Mbit/s | Unlimited* |
+| Cloud VPS 20 ⭐ | 6 vCPUs | 12 GB | 100 GB NVMe | 200 GB SSD | 300 Mbit/s | Unlimited* |
+| Cloud VPS 30 | 8 vCPUs | 24 GB | 200 GB NVMe | 400 GB SSD | 600 Mbit/s | Unlimited* |
+| Cloud VPS 40 | 12 vCPUs | 48 GB | 250 GB NVMe | 500 GB SSD | 800 Mbit/s | Unlimited* |
+| Cloud VPS 50 | 16 vCPUs | 64 GB | 300 GB NVMe | 600 GB SSD | 1 Gbit/s | Unlimited* |
+| Cloud VPS 60 | 18 vCPUs | 96 GB | 350 GB NVMe | 700 GB SSD | 1 Gbit/s | Unlimited* |
 
 > ⭐ Most popular plan.  
 > \* Incoming traffic: unlimited and unmetered. Outgoing: up to 32 TB/month at EU locations; fair usage policy applies. Contabo reserves the right to throttle servers with exceptionally high or disruptive usage.
@@ -156,4 +156,4 @@ Contabo provides **unmanaged hosting**. Support covers network, hardware, and in
 
 ---
 
-*Prices listed in EUR, excluding VAT. Specifications subject to change — verify current details at contabo.com.*
+*Specifications subject to change — verify current details at contabo.com.*

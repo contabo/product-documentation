@@ -1,6 +1,6 @@
 # Hugo
-title = "Contabo Knowledge Base"
-description = "Welcome to Contabo Knowledge Base!"
+title = "Contabo Product Documentation"
+description = "Contabo Product Documentation"
 images = ["cover.png"]
 
 # mainSections
@@ -11,7 +11,6 @@ math = false # false (default) or true
 mathEngine = "KaTeX" # "KaTeX" (default) or "MathJax"
 
 [social]
-  twitter = "getdoks"
 
 # Doks (@thulite/doks-core)
 [doks]
@@ -80,7 +79,7 @@ mathEngine = "KaTeX" # "KaTeX" (default) or "MathJax"
   editPage = false # false (default) or true
   lastMod = false # false (default) or true
   repoHost = "GitHub" # GitHub (default), Gitea, GitLab, Bitbucket, or BitbucketServer
-  docsRepo = "https://github.com/h-enk/doks"
+  docsRepo = "https://github.com/contabo/Product-Documentation"
   docsRepoBranch = "main" # main (default), master, or <branch name>
   docsRepoSubPath = "" # "" (none, default) or <sub path>
 
@@ -137,7 +136,7 @@ mathEngine = "KaTeX" # "KaTeX" (default) or "MathJax"
   [seo.schemas]
     type = "Organization" # Organization (default) or Person
     logo = "favicon-512x512.png" # Logo of Organization — favicon-512x512.png (default)
-    name = "Thulite" # Name of Organization or Person
+    name = "Contabo GmbH" # Name of Organization or Person
     sameAs = [] # E.g. ["https://github.com/thuliteio/thulite", "https://fosstodon.org/@thulite"]
     images = ["cover.png"] # ["cover.png"] (default)
     article = [] # Article sections
