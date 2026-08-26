@@ -46,7 +46,7 @@ contabo-docs/
 │           ├── 05_gpu_cloud.md
 │           └── 06_object_storage.md
 │       └── reference          # Links to documentation that is hosted in different places, e.g. API Reference & Terraform
-│           └── API.md          
+│           └── API.md
 │           └── Terraform.md
 ├── static/                     # Static assets served as-is (favicon, etc.)
 ├── package.json
@@ -71,7 +71,7 @@ docker compose up --build
 docker compose up
 ```
 
-Open `http://localhost:1313/Product-Documentation/` in your browser. **Live reload is on by default** — save any file under `content/`, `layouts/`, `assets/`, or `config/` and the browser refreshes automatically within a second or two.
+Open `http://localhost:1313/` in your browser. **Live reload is on by default** — save any file under `content/`, `layouts/`, `assets/`, or `config/` and the browser refreshes automatically within a second or two.
 
 Stop the server with `Ctrl+C`.
 
@@ -184,7 +184,7 @@ GitHub Actions runner
        ▼
 GitHub Pages serves the site
 ```
-Site will be accesible at [https://contabo.github.io/Product-Documentation/](https://contabo.github.io/Product-Documentation/)
+Site will be accesible at [https://docs.contabo.com/](https://docs.contabo.com/)
 
 
 **Enabling GitHub Pages for the first time:**

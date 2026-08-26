@@ -1,5 +1,5 @@
 title = "Contabo Product Documentation"
-baseurl = "https://contabo.github.io/Product-Documentation/"
+baseurl = "https://docs.contabo.com/"
 disableAliases = true
 disableHugoGeneratorInject = true
 # disableKinds = ["taxonomy", "term"]
