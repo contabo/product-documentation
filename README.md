@@ -64,22 +64,14 @@ The files under `content/docs/products/`, `content/docs/guides/` and `content/do
 All local development runs inside Docker — no Node.js or Hugo installation required on your machine.
 
 ```bash
-# First run — builds the image (takes ~1 min)
-docker compose up --build
-
-# Subsequent runs
-docker compose up
+npm run dev
 ```
 
 Open `http://localhost:1313/` in your browser. **Live reload is on by default** — save any file under `content/`, `layouts/`, `assets/`, or `config/` and the browser refreshes automatically within a second or two.
 
 Stop the server with `Ctrl+C`.
 
-If you change `package.json` or `package-lock.json`, rebuild the image:
-
-```bash
-docker compose up --build
-```
+If you change `package.json` or `package-lock.json`, restart `npm run dev`.
 
 ---
 

@@ -1,16 +1,12 @@
 {
-  "name": "contabo-docs",
+  "name": "@contabo/product-documentation",
   "version": "1.9.1",
-  "description": "Doks theme",
-  "author": "Thulite",
+  "description": "Contabo Product Documentation",
+  "author": "Contabo",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/thuliteio/doks.git"
-  },
   "scripts": {
     "create": "hugo new",
-    "dev": "hugo server --disableFastRender --noHTTPCache",
+    "dev": "docker compose up --build",
     "format": "prettier **/** -w -c",
     "build": "hugo --minify --gc",
     "preview": "vite preview --outDir public"
