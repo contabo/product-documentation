@@ -25,9 +25,9 @@
 
         <a
           class="btn btn-primary btn-cta my-3"
-          href="/docs/{{ if site.Params.doks.docsVersioning }}{{ site.Params.doks.docsVersion }}/{{ end }}guides/example-guide/"
+          href="/docs/servers-hosting/vps/"
           role="button"
-        >{{ i18n "get_started" }}</a>
+        >Docs</a>
 
         {{/* optional additional page content */}}
         {{ with .Content }}<div class="mt-2">{{ . }}</div>{{ end }}
@@ -54,10 +54,10 @@
                      stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
                 </svg>
-                <h2 class="h6 mb-0">Cloud VPS &amp; VDS</h2>
+                <h2 class="h6 mb-0">VPS</h2>
               </div>
-              <p class="mb-0">Guides for provisioning, managing, and scaling your virtual private and dedicated servers.</p>
-              <a href="/docs/products/cloud-vps/" class="stretched-link"></a>
+              <p class="mb-0">Core VPS, Performance VPS, Max Performance VPS and Storage VPS — plans, network, backups and lifecycle.</p>
+              <a href="/docs/servers-hosting/vps/" class="stretched-link"></a>
             </div>
           </div>
         </div>
@@ -75,8 +75,8 @@
                 </svg>
                 <h2 class="h6 mb-0">Object Storage</h2>
               </div>
-              <p class="mb-0">S3-compatible object storage — how to create buckets, manage access, and integrate with your stack.</p>
-              <a href="/docs/products/object-storage/" class="stretched-link"></a>
+              <p class="mb-0">S3-compatible object storage — endpoints, limits, S3 feature support and compatible tools.</p>
+              <a href="/docs/storage/object-storage/" class="stretched-link"></a>
             </div>
           </div>
         </div>
@@ -91,10 +91,10 @@
                   <polyline points="16 18 22 12 16 6"/>
                   <polyline points="8 6 2 12 8 18"/>
                 </svg>
-                <h2 class="h6 mb-0">API &amp; Terraform</h2>
+                <h2 class="h6 mb-0">Dedicated Servers</h2>
               </div>
-              <p class="mb-0">Automate your infrastructure using the Contabo API and the official Terraform provider.</p>
-              <a href="/docs/reference/api-reference/" class="stretched-link"></a>
+              <p class="mb-0">Single-tenant bare-metal servers — hardware configurations, IPMI, storage options and GPU add-ons.</p>
+              <a href="/docs/servers-hosting/dedicated-servers/" class="stretched-link"></a>
             </div>
           </div>
         </div>
@@ -108,10 +108,10 @@
                      stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
                 </svg>
-                <h2 class="h6 mb-0">Guides</h2>
+                <h2 class="h6 mb-0">GPU VPS</h2>
               </div>
-              <p class="mb-0">Step-by-step tutorials for common tasks — from first login to advanced server configuration.</p>
-              <a href="/docs/guides/example-guide/" class="stretched-link"></a>
+              <p class="mb-0">Performance VPS with a dedicated NVIDIA RTX 6000 PRO — specifications, image, add-ons and limitations.</p>
+              <a href="/docs/servers-hosting/gpu-vps/" class="stretched-link"></a>
             </div>
           </div>
         </div>
@@ -129,10 +129,10 @@
   <div class="row justify-content-center text-center">
     <div class="col-lg-7">
       <h2 class="mt-2" style="font-size:1.25rem;">Ready to get started?</h2>
-      <p class="text-muted mb-3">Browse products, read guides, or jump straight into the API reference.</p>
+      <p class="text-muted mb-3">Browse the product documentation.</p>
       <a class="btn btn-primary btn-cta px-4 my-2"
-         href="/docs/{{ if site.Params.doks.docsVersioning }}{{ site.Params.doks.docsVersion }}/{{ end }}guides/example-guide/"
-         role="button">{{ i18n "get_started" }}</a>
+         href="/docs/servers-hosting/vps/"
+         role="button">Docs</a>
     </div>
   </div>
 </section>
