@@ -2,7 +2,7 @@ title = "Contabo Product Documentation"
 baseurl = "https://docs.contabo.com/"
 disableAliases = true
 disableHugoGeneratorInject = true
-# disableKinds = ["taxonomy", "term"]
+disableKinds = ["taxonomy", "term"]
 enableEmoji = true
 enableGitInfo = false
 enableRobotsTXT = true
@@ -70,7 +70,6 @@ copyRight = "Copyright (c) 2026 Contabo GmbH"
   tag = "tags"
 
 [permalinks]
-  blog = "/blog/:slug/"
   docs = "/docs/:sections[1:]/:slug/"
 # docs = "/docs/1.0/:sections[1:]/:slug/"
 

@@ -1,6 +1,6 @@
 ---
-title: "Contabo Knowledge Base"
-description: "Product documentation for Contabo cloud infrastructure."
+title: "Product Documentation"
+description: "Product documentation for Contabo cloud infrastructure: Core, Performance, Max Performance, Storage and GPU VPS, Dedicated Servers and Object Storage."
 summary: ""
 date: 2026-06-25
 lastmod: 2026-06-25
@@ -16,5 +16,5 @@ params:
   section:
     title: "Documentation"
     iconName: "book"
-    startUrl: "/docs/guides/example-guide/"
+    startUrl: "/docs/servers-hosting/vps/"
 ---

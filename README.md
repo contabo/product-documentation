@@ -36,24 +36,45 @@ contabo-docs/
 ├── content/
 │   └── docs/
 │       ├── _index.md           # Docs landing page
-│       └── guides              # Tutorials and Product-Guides can be added here
-│       └── products/
-│           ├── _index.md       # Products section index
-│           ├── 01_cloud_vps.md
-│           ├── 02_storage_vps.md
-│           ├── 03_cloud_vds.md
-│           ├── 04_dedicated_servers.md
-│           ├── 05_gpu_cloud.md
-│           └── 06_object_storage.md
-│       └── reference          # Links to documentation that is hosted in different places, e.g. API Reference & Terraform
-│           └── API.md
-│           └── Terraform.md
+│       ├── servers-hosting/    # Sidebar groups mirror the Customer Control Panel menu
+│       │   ├── _index.md       # group label only (build.render: never)
+│       │   ├── vps.md          # Core VPS, Performance VPS and Storage VPS on one page
+│       │   ├── gpu-vps.md
+│       │   ├── vds.md          # Max Performance VPS (linkTitle "VDS")
+│       │   ├── images.md
+│       │   ├── dedicated-servers.md
+│       │   └── vps-auto-backup.md
+│       ├── network-services/
+│       │   ├── _index.md
+│       │   ├── private-networking.md
+│       │   ├── ip-assignment.md
+│       │   ├── dns-management.md
+│       │   └── firewall.md
+│       ├── storage/
+│       │   ├── _index.md
+│       │   └── object-storage.md
+│       ├── domains/
+│       │   ├── _index.md
+│       │   └── domain-management.md
+│       ├── dpa/
+│       │   ├── _index.md
+│       │   └── dpa.md
+│       ├── account-management/
+│       │   ├── _index.md
+│       │   └── rbac.md
+│       └── references/         # Sidebar entries that link out (externalUrl in front matter)
+│           ├── _index.md
+│           ├── api.md
+│           ├── cntb.md
+│           └── terraform.md
+├── layouts/
+│   └── _partials/sidebar/render-section-menu.html  # Doks override: externalUrl support in sidebar
 ├── static/                     # Static assets served as-is (favicon, etc.)
 ├── package.json
 └── README.md
 ```
 
-The files under `content/docs/products/`, `content/docs/guides/` and `content/docs/reference/` are the authoritative source for all product documentation. Everything else in the repo is theme infrastructure — you will rarely need to touch it.
+The product pages under `content/docs/` are the authoritative source for all product documentation. Everything else in the repo is theme infrastructure — you will rarely need to touch it.
 
 ---
 
@@ -193,221 +214,112 @@ Attention: the repository has to be public in order to use Github Pages. To use 
 
 ## Updating content
 
-All product documentation lives in `content/docs/products/`. Changes follow a simple edit → commit → push cycle — GitHub Actions handles the rest.
+The sidebar mirrors the Customer Control Panel menu. Each group is a directory under `content/docs/` whose `_index.md` has `build.render: never` (label only, no page); the pages inside are the entries and are sorted by `weight`. Product pages (VPS, VDS, Dedicated Servers, GPU VPS, Object Storage) describe a product; feature pages (Images, VPS Auto Backup, Private Networking, IP Assignment, DNS Management, Firewall) hold the shared feature facts once, and product pages link to them from a short **Network & Security** section instead of repeating them.
 
-### Edit an existing product page
+### Edit an existing page
 
-Open the relevant file and edit any section. The file renders exactly as written — there is no custom shortcode or template logic involved beyond standard Markdown.
+Open the file and edit the relevant section. Pages are plain Markdown — no shortcodes or template logic. Update `lastmod` in the front matter.
 
 ```bash
-# Example: update Cloud VPS pricing
-$EDITOR content/docs/products/01_cloud_vps.md
-
-git add content/docs/products/01_cloud_vps.md
-git commit -m "Update Cloud VPS pricing table — July 2026"
-git push
+$EDITOR content/docs/servers-hosting/vps.md
+git add content/docs/servers-hosting/vps.md
+git commit -m "Update Core VPS plans table — September 2026"
 ```
-
-The site is live with the change in approximately two minutes.
-
-Common things to update in a product file:
 
 | What changed | Where to edit |
 |---|---|
-| A plan was added, removed, or repriced | **Plans & Pricing** table |
-| A new feature was added | **Key Features** table |
-| A new region was added | **Availability & Locations** list |
-| A new OS was added | **Supported Operating Systems** table |
-| A billing term changed | **Billing Terms** table |
-| A known limitation was resolved | **Limitations & Notes** list |
+| A plan was added, removed or its specifications changed | **Plans** table (VPS: the family's table) |
+| A feature was added or changed | **Key Features** table, or the feature page under Network Services / Servers & Hosting |
+| A new region | **Availability & Locations** |
+| A new OS or image | `servers-hosting/images.md` |
+| A limitation was resolved | **Limitations & Notes** |
 
-### Add a new product page
+### Add a page
 
-Along the example of a Loadbalancer page
+1. Create `content/docs/<group>/<page>.md` in the group where the Customer Control Panel shows the feature. The URL is `/docs/<group>/<slug-of-title>/`.
+2. Front matter: `title`, `description` (110–160 characters), `lead`, `date`, `lastmod`, `draft: false`, `weight` (10 higher than the last page in the group), `toc: true`. Add `linkTitle` if the sidebar label should differ from the title (e.g. `linkTitle: "VDS"`).
+3. Fill in the sections listed under [Document structure](#document-structure). Start the body with `## Overview` — no `h1`.
+4. To add a **new group**, create `content/docs/<group>/_index.md` with `title`, `weight` and `build: {render: never, list: always}`.
+5. External sidebar links (as under References) are pages with an `externalUrl` front-matter field; the sidebar override in `layouts/_partials/sidebar/render-section-menu.html` renders them as outbound links.
 
-**1. Create the file** following the naming convention `NN_product_name.md`, where `NN` is the next available two-digit number:
+The sidebar is generated from the content tree; nothing has to be registered in `menus.en.toml`. Remove a page with `git rm`; its sidebar entry disappears with it.
 
-```bash
-cp content/docs/products/01_cloud_vps.md content/docs/products/07_load_balancer.md
-```
-
-**2. Update the front matter** at the top of the new file:
-
-```markdown
----
-title: "Load Balancer"
-description: "Managed L4/L7 load balancer for distributing traffic across Contabo servers."
-lead: "High-availability traffic distribution — no infrastructure management required."
-date: 2026-07-01
-lastmod: 2026-07-01
-draft: false
-weight: 70
-toc: true
----
-```
-
-Set `weight` to a value 10 higher than the last existing product (currently `60` for Object Storage), so the sidebar stays in the intended order.
-
-**3. Fill in all twelve sections** of the document structure (see [Document structure](#document-structure) below).
-
-**4. Register the page in the sidebar** by adding an entry to `config/_default/menus.toml`:
-
-```toml
-[[docs]]
-  name   = "Load Balancer"
-  weight = 17
-  parent = "products"
-  url    = "/docs/products/load-balancer/"
-```
-
-**5. Commit and push:**
-
-```bash
-git add content/docs/products/07_load_balancer.md config/_default/menus.toml
-git commit -m "Add Load Balancer product documentation"
-git push
-```
-
-### Remove a product page
-
-```bash
-git rm content/docs/products/07_load_balancer.md
-```
-
-Also remove the corresponding `[[docs]]` block from `config/_default/menus.toml`, then commit and push. Hugo will not build a page for a deleted file, and the sidebar entry will disappear.
-
-### Update site-wide metadata
+### Site-wide settings
 
 | What to change | File | Key |
 |---|---|---|
 | Site title | `config/_default/hugo.toml` | `title` |
 | Site description | `config/_default/params.toml` | `description` |
-| Base URL | `config/_default/hugo.toml` | `baseURL` |
-| Top navigation links | `config/_default/menus.toml` | `[[main]]` entries |
-| Logo or favicon | `static/` directory | Replace files directly |
+| Base URL | `config/_default/hugo.toml` | `baseurl` |
+| Top navigation | `config/_default/menus/menus.en.toml` | `[[main]]` entries |
+| Homepage cards and buttons | `layouts/home.html` | |
+| Logo or favicon | `static/`, `assets/` | Replace files directly |
 
 ---
 
 ## Document structure
 
-Every product file uses the same twelve-section structure. This consistency means readers always know where to find a specific type of information, and contributors know exactly what to include when writing a new page.
-
-With upcoming products, this structure might be subject to change! If the structure is changed/adapted, for consistency it should be adapted in all product documentation files.
+Every product page uses the same section order. The page title comes from the `title` front-matter field; files start directly with `## Overview`.
 
 ```
-# [Product Name] — Product Documentation
-
-> metadata block (product, category, source URL, last updated date)
-
----
-
 ## Overview
-## Ideal Use Cases
-## Plans & Pricing
-## Key Features
-## Supported Operating Systems
-## Software & App Images (1-Click)  ← omit if not applicable
+## Plans                                    ← omit if the product has no fixed plans
+## Key Features                             ← one line per feature, linking to the feature page or section
+## Rescue System                            ← server products
+## Upgrades, Migration & Storage Extension  ← server products
 ## Management & DevOps
 ## Availability & Locations
-## Billing Terms
-## Support
-## Limitations & Notes
-
----
-*footer: prices, VAT note, last updated*
+## Limitations & Notes                      ← only facts not stated elsewhere on the page
 ```
+
+Pages with additional technical detail (e.g. Object Storage: **Limits**, **Storage Regions & Endpoints**, **S3 Feature Support**; GPU VPS: **GPU Specifications**) add product-specific sections between **Key Features** and **Management & DevOps**.
+
+**Positives first, limitations last.** Every section before *Limitations & Notes* states what the product has or does. Anything that is not available, not supported, not offered, or only possible with a workaround goes under *Limitations & Notes*; in comparison and availability tables use "—" for the missing item and list it there.
+
+**Each fact appears exactly once per page.** Family comparisons belong in *Products at a Glance* (VPS), per-plan numbers in the plan tables, one-line feature summaries with links in *Key Features*; a detail section exists only where there is detail beyond one line. Operating systems, 1-Click apps and custom images are documented on the Images page only; network features on the Network Services pages only; Auto Backup on its own page only — product pages link to them. Feature pages (Network Services, Images, VPS Auto Backup) use Overview → Availability → topic-specific sections → Limitations & Notes.
+
+The **VPS** page documents the three plan families Core VPS, Performance VPS and Storage VPS together: Overview → Products at a Glance → one section per family (`## Core VPS {#core-vps}`, plan table directly under the intro paragraph, family-specific bullets) → the shared sections from Key Features onward. Deep-link with `/docs/servers-hosting/vps/#core-vps`, `#performance-vps` or `#storage-vps`.
 
 ### Section-by-section guide
 
-**Metadata block** — the blockquote directly under the `h1` title. Contains four fields on separate lines. Do not add or remove fields.
+**Overview** — two to four sentences: what the product is, how it works, and what makes it technically different from adjacent products.
 
-```markdown
-> **Product:** Cloud VPS (Virtual Private Servers)
-> **Category:** Compute
-> **URL:** contabo.com/en/vps-server/
-> **Source:** contabo.com | **Last updated:** June 2026
-```
+**Plans** — one row per plan; columns are technical specifications only (CPU, RAM, storage, `Mbit/s Port` with numeric values, snapshots, traffic). Footnotes go in a blockquote directly after the table.
 
----
+**Key Features** — two-column table `Feature` / `Details`; feature names bold; one clause per cell, with a link to the feature page or the detail section where one exists.
 
-**Overview** — two to four sentences describing what the product is, how it works, and what makes it different from adjacent products. End with a callout sentence highlighting the most popular or recommended plan, if one exists. Keep it factual — no marketing language.
+**Rescue System** — how to start it from the Control Panel, access (SSH port 22 as root) and what it can do.
 
----
+**Upgrades, Migration & Storage Extension** — upgrade, downgrade, product-line change, region migration, storage extension and reinstall, each with its effect on data and IP addresses.
 
-**Ideal Use Cases** — a bulleted list of concrete workloads and audiences. Each item is a short phrase, not a sentence. Aim for six to ten items.
+**Management & DevOps** — bullets starting with a bold tool or interface name; inline `code` for commands and endpoints.
 
-```markdown
-- Static and dynamic websites, WordPress, CMS platforms
-- Web application backends and REST APIs
-- Development, staging, and CI/CD environments
-```
+**Availability & Locations** — one sentence listing regions, then a blockquote with region-specific technical caveats.
 
----
-
-**Plans & Pricing** — a Markdown table with one row per plan. Required columns vary by product but always include the plan name and the monthly price in EUR formatted as `**€X.XX**`. Mark the most popular plan with a ⭐ in the name cell. Follow the table with a blockquote callout explaining any footnotes (traffic limits, discount conditions, etc.).
-
----
-
-**Key Features** — a two-column Markdown table with `Feature` and `Details` as headers. Feature names in the left column are **bold**. Keep each details cell to one concise sentence or clause.
-
----
-
-**Supported Operating Systems** — a two-column table with `OS` and `Cost`. Cost is either `Free` or `Additional monthly fee`. Windows Server is always paid; all Linux distributions are always free.
-
----
-
-**Software & App Images (1-Click)** — a single line of tool names separated by ` · ` (middot with spaces). Mark paid tools with `*(paid)*` inline. Omit this section entirely if the product has no 1-click images.
-
-```markdown
-Docker · LAMP · Webmin (free) · Plesk *(paid)* · cPanel *(paid)*
-```
-
----
-
-**Management & DevOps** — a bulleted list. Each item starts with a **bold** tool or interface name followed by an em dash and a brief description of what it covers for this product. Use inline `code` formatting for CLI commands and API endpoint names.
-
----
-
-**Availability & Locations** — a single sentence listing all regions, followed by a blockquote with any region-specific caveats (surcharges, availability limits, etc.).
-
----
-
-**Billing Terms** — a two-column table with `Term` and `Details`. Include: minimum contract, billing cycles, annual discount, setup fee, cancellation notice, and payment model. Highlight `None` for setup fees in bold.
-
----
-
-**Support** — a two-column table with `Channel` and `Availability`. Always end with a blockquote callout clarifying that Contabo provides unmanaged hosting and what that means for support scope.
-
----
-
-**Limitations & Notes** — a bulleted list of known constraints, caveats, and edge cases. Each item describes something a customer might get wrong or expect to work differently. Keep these factual — do not editorialize. This section prevents support tickets.
-
----
-
-**Footer line** — the final line of every file, separated by `---`. Always this exact text, with the date updated:
-
-```markdown
-*Prices listed in EUR, excluding VAT. Specifications subject to change — verify current details at contabo.com.*
-```
+**Limitations & Notes** — constraints a customer might expect to work differently and that are not already stated in another section of the page. Omit the section if nothing remains.
 
 ---
 
 ## Content conventions
 
-**Prices** — always in EUR, always formatted as `€X.XX`, always bold inside table cells (`**€4.50**`). Never include VAT. Note at the footer that VAT is excluded.
+**Scope** — technical product reference only. Specifications, limits, behaviour, availability per product and procedures in the Control Panel. Anything commercial (prices, fees, discounts, billing terms, offers) or promotional (target audiences, use cases, badges, comparisons, value claims) is out of scope and belongs on contabo.com.
 
-**Dates** — use `Month YYYY` format (e.g. `June 2026`). Update `lastmod` in front matter and the metadata block whenever you make a substantive change to a file.
+**No Control Panel locations** — never describe where a function sits in the Customer Control Panel (menu paths, tab or section names, URLs such as my.contabo.com); write "in the Control Panel". The panel's structure changes.
 
-**Tables** — use standard GFM pipe tables. Align columns with `|---|` (no explicit alignment markers needed). Keep cell content short — if a details cell runs long, rewrite it as a shorter clause.
+**Sources** — contabo.com is authoritative for product names and specifications; help.contabo.com for feature behaviour. Where they disagree, the website wins. Internal Confluence pages are the source for products without a public page (GPU VPS).
 
-**Footnotes in tables** — use an asterisk `*` in the cell and explain it in a blockquote immediately after the table. Do not use Markdown footnote syntax (`[^1]`).
+**Product names** — Core VPS, Performance VPS, Max Performance VPS, Storage VPS, Dedicated Servers, GPU VPS, Object Storage, as on contabo.com. Plan names follow the website (Cloud VPS 4, Cloud VPS Plus 4, Cloud VDS S, Storage VPS 10). "VDS" appears only as the sidebar label and plan-name prefix of Max Performance VPS.
 
-**Product names** — use the exact official Contabo product names: Cloud VPS, Storage VPS, Cloud VDS, Dedicated Servers, GPU Cloud, Object Storage. Do not abbreviate or invent variants.
+**Tone** — factual and direct; numbers and precise statements, no superlatives or vague qualifiers.
 
-**Tone** — factual and direct. Avoid superlatives, marketing language, and vague qualifiers ("very fast", "highly available" without specifics). Use numbers and precise statements wherever possible.
+**Dates** — `Month YYYY` in prose; update `lastmod` in the front matter on every substantive edit.
 
-**draft: false** — all published pages must have `draft: false` in their front matter. Pages with `draft: true` are built locally with `hugo server --buildDrafts` but are never included in the production build.
+**Tables** — GFM pipe tables with `|---|` separators; keep cells to a short clause. Footnotes use `*` in the cell and a blockquote after the table, not `[^1]` syntax.
+
+**Descriptions** — the front-matter `description` must be 110–160 characters; the build warns otherwise.
+
+**draft: false** — all published pages must have `draft: false`.
 
 ---
 
-*Source data: contabo.com · Last updated: June 2026 · Prices in EUR excluding VAT*
+*Sources: contabo.com · help.contabo.com · Last updated: September 2026*
