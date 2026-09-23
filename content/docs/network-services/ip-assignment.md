@@ -3,7 +3,7 @@ title: "IP Assignment"
 description: "IPv4 and IPv6 on Contabo servers: one static IPv4 and a /64 IPv6 per server, additional IPv4 limits per product (1 VPS, 15 VDS, 25 Dedicated), activation."
 lead: "IPv4 and IPv6 allocation, additional addresses per product, and when an IP changes."
 date: 2026-09-22
-lastmod: 2026-09-22
+lastmod: 2026-09-23
 draft: false
 weight: 20
 toc: true
@@ -46,7 +46,7 @@ Every server is assigned a public IPv4 address and an IPv6 subnet; further IPv4 
 | Upgrade to a larger plan (in place) | Unchanged |
 | Reinstall | Unchanged |
 | Region migration (VPS/VDS) | Both change |
-| Relocation within a region | Changes |
+| Relocation within a region | Unchanged |
 | Downgrade or change of plan family / product line (new server) | New addresses |
 | Private Networking activation on an incompatible host (reinstall) | Public IP changes |
 
@@ -62,4 +62,4 @@ PTR records for IPv4 and IPv6 addresses are managed in the Control Panel under R
 
 - Additional IPv4 addresses are not configured automatically — they must be added to the network configuration inside the OS.
 - Additional IPv4 addresses for Dedicated Servers are assigned via support, not self-service.
-- Dedicated Servers cannot be migrated between regions; their addresses change only on a relocation requested by the customer.
+- Dedicated Servers cannot be migrated between regions; a relocation within a region keeps the addresses.

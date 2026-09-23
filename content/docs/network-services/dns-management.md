@@ -3,7 +3,7 @@ title: "DNS Management"
 description: "Contabo DNS Management: nameservers ns1 to ns3.contabo.net, record types, TTL rules, zone creation in the Control Panel and reverse DNS for IPv4 and IPv6."
 lead: "Nameservers, DNS zones and records, TTL rules and reverse DNS in the Control Panel."
 date: 2026-09-22
-lastmod: 2026-09-22
+lastmod: 2026-09-23
 draft: false
 weight: 30
 toc: true
@@ -48,4 +48,4 @@ Domains registered through Contabo are assigned `ns2.contabo.net` and `ns3.conta
 ## Limitations & Notes
 
 - DNS zone management covers the record types listed above; other record types are not documented as supported.
-- Outbound e-mail from servers is subject to a soft limit of roughly 25 messages per minute; set a valid PTR record for mail servers.
+- Set a valid PTR record for servers that send e-mail.

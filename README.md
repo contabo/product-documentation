@@ -61,7 +61,7 @@ contabo-docs/
 │       │   └── dpa.md
 │       ├── account-management/
 │       │   ├── _index.md
-│       │   └── rbac.md
+│       │   └── user-management.md
 │       └── references/         # Sidebar entries that link out (externalUrl in front matter)
 │           ├── _index.md
 │           ├── api.md

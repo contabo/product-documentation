@@ -1,9 +1,9 @@
 ---
-title: "RBAC"
-description: "Account roles at Contabo — Owner, Full Access, Technician, Billing Admin, Invoice, Abuse & Fraud, Object Storage — with permissions and an access matrix."
-lead: "Account roles, their permissions and an access matrix by area."
+title: "User Management"
+description: "User Management at Contabo: account users, their roles (Owner, Full Access, Technician, Billing Admin and more) and an access matrix by area."
+lead: "Account users, their roles and permissions, and an access matrix by area."
 date: 2026-09-22
-lastmod: 2026-09-22
+lastmod: 2026-09-23
 draft: false
 weight: 10
 toc: true

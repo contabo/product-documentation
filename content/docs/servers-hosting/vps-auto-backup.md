@@ -3,7 +3,7 @@ title: "VPS Auto Backup"
 description: "Contabo Auto Backup add-on for VPS: daily incremental off-server backups, up to 10 kept for 10 days, restore to the original VPS, relation to snapshots."
 lead: "Daily off-server backups for Core VPS and Performance VPS, kept for up to 10 days."
 date: 2026-09-22
-lastmod: 2026-09-22
+lastmod: 2026-09-23
 draft: false
 weight: 50
 toc: true
@@ -31,7 +31,7 @@ The add-on can be enabled at deployment or later and starts automatically.
 - **Initial backup:** a full backup is taken within the standard backup window after provisioning or after the add-on is added.
 - **Schedule:** one backup per day, incremental after the initial full backup, with at least 8 hours between backups.
 - **Retention:** up to 10 backups are kept, each for a maximum of 10 days; when the limit is reached the oldest backup is deleted first.
-- **Storage location:** off-server, in the data center selected by the customer — EU, US Central or Asia (Singapore) — so a failure of the VPS host does not affect the backups.
+- **Storage location:** off-server, in a Contabo data center, so a failure of the VPS host does not affect the backups. The backup location cannot be selected by the customer.
 
 ---
 
