@@ -3,7 +3,7 @@ title: "DPA"
 description: "Data Processing Agreement (DPA) with Contabo under the GDPR: covered services, how to create, conclude and download it in the Control Panel, and languages."
 lead: "Create and download a GDPR Data Processing Agreement in the Customer Control Panel."
 date: 2026-09-22
-lastmod: 2026-09-22
+lastmod: 2026-09-23
 draft: false
 weight: 10
 toc: true
@@ -48,5 +48,3 @@ The concluded agreement can be downloaded from the DPA section at any time.
 ## Limitations & Notes
 
 - This page describes the Control Panel workflow only and is not legal advice.
-
-> **Review note (internal):** legal/compliance content — requires review by Contabo Legal / Data Protection before publication.

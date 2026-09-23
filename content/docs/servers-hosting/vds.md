@@ -3,7 +3,7 @@ title: "Max Performance VPS"
 description: "Max Performance VPS (Cloud VDS): virtual dedicated servers with 6 to 24 dedicated AMD EPYC 7282 vCores, reserved RAM, NVMe storage and nested virtualization."
 lead: "Virtual dedicated servers with dedicated CPU cores and reserved RAM."
 date: 2026-06-25
-lastmod: 2026-09-21
+lastmod: 2026-09-23
 draft: false
 weight: 20
 linkTitle: "VDS"
@@ -25,7 +25,7 @@ Max Performance VPS — sold in the Customer Control Panel as VDS and previously
 | Cloud VDS XL | 16 vCores | AMD EPYC 7282, 2.8 GHz | 64 GB | 480 GB NVMe | 1,000 | Unlimited* |
 | Cloud VDS XXL | 24 vCores | AMD EPYC 7282, 2.8 GHz | 96 GB | 720 GB NVMe | 1,000 | Unlimited* |
 
-> vCores are counted with AMD Simultaneous Multithreading (SMT) enabled: each physical core provides 2 vCores. Additional NVMe storage configurations are available beyond the base amounts listed.  
+> vCores are counted with AMD Simultaneous Multithreading (SMT) enabled: each physical core provides 2 vCores. Additional SSD storage is available beyond the base amounts listed.  
 > \* No default bandwidth cap; a fair usage policy applies. Contabo notifies customers by email if usage is exceptionally high or disruptive and reserves the right to throttle affected servers.
 
 ---
@@ -36,19 +36,18 @@ Max Performance VPS — sold in the Customer Control Panel as VDS and previously
 |---|---|
 | **CPU** | AMD EPYC 7282, cores allocated exclusively to the instance; SMT enabled; AMD Core Performance Boost |
 | **RAM** | 100% dedicated — no memory ballooning or sharing with other tenants |
-| **Storage** | NVMe SSD on all plans; additional NVMe via support |
-| **Bandwidth packages** | Unrestricted data transfer packages of 250, 500, 750 or 1,000 Mbit/s available |
+| **Storage** | NVMe SSD on all plans; additional SSD storage via support |
 | **Provisioning** | Control Panel, API, or CLI |
 | **IP addresses** | 1 static IPv4 + /64 IPv6 subnet per instance; up to 15 additional IPv4 — [IP Assignment](/docs/network-services/ip-assignment/) |
 | **Firewall** | Included; network-level — [Firewall](/docs/network-services/firewall/) |
-| **Private Networking** | Add-on; isolated Layer 2 network between instances in the same region — [Private Networking](/docs/network-services/private-networking/) |
+| **Private Networking** | Provisioned manually via support ticket; isolated Layer 2 network between instances in the same region — [Private Networking](/docs/network-services/private-networking/) |
 | **DNS and reverse DNS** | Managed in the Control Panel — [DNS Management](/docs/network-services/dns-management/) |
 | **DDoS protection** | Always-on, network-level, automatic |
 | **Rescue System** | Live system booted into RAM from the Control Panel (see below) |
 | **Nested virtualization** | Supported — Proxmox VE, KVM, XenServer |
 | **Remote management** | Control Panel VNC console |
 | **Images** | OS, 1-Click and custom images — [Images](/docs/servers-hosting/images/) |
-| **Windows Server** | Contabo-provided license |
+| **Windows Server** | Add-on; Contabo-provided license |
 
 ---
 
@@ -69,7 +68,7 @@ The Rescue System, started from the Control Panel, boots a live system into RAM.
 
 ## Management & DevOps
 
-- **Customer Control Panel**: start/stop/restart, reinstall, VNC console, rescue system, firewall, private networking, DNS and reverse DNS
+- **Customer Control Panel**: start/stop/restart, reinstall, VNC console, rescue system, firewall, DNS and reverse DNS
 - **Contabo API** (`api.contabo.com`): RESTful; OAuth2 authentication with client ID, client secret and an API user password created in the Control Panel; no limit on the number of API users
 - **CLI (`cntb`)**: open-source command-line client (github.com/contabo/cntb) using the same OAuth2 credentials
 - **cloud-init**: user-data scripts at boot
@@ -92,7 +91,7 @@ EU · United Kingdom · USA (3 locations) · Singapore · Japan · India · Aust
 - CPU cores and RAM are exclusively reserved, but the host machine is still multi-tenant at the hardware level.
 - Snapshots and the Auto Backup add-on are not available.
 - Hyper-V does not run on VDS with Windows Server; other hypervisors are supported.
-- IPMI / KVM-over-IP is not available (Dedicated Servers only).
+- IPMI is not available (Dedicated Servers only).
 - No direct downgrade: requires a new smaller server, manual data migration and cancellation of the original — the IP address changes.
 - No direct conversion between the VPS plan families and Max Performance VPS — same procedure as a downgrade.
 - Storage changes (type or capacity) require a reinstall — all data is erased.

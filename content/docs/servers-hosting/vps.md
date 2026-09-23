@@ -3,7 +3,7 @@ title: "VPS"
 description: "Contabo VPS: KVM virtual private servers in three plan families — Core VPS (SSD), Performance VPS (NVMe, AMD EPYC) and Storage VPS (high-capacity SSD)."
 lead: "KVM-based virtual private servers in three plan families: Core VPS, Performance VPS and Storage VPS."
 date: 2026-06-25
-lastmod: 2026-09-22
+lastmod: 2026-09-23
 draft: false
 weight: 10
 toc: true
@@ -19,13 +19,13 @@ Contabo VPS are KVM-based virtual servers with shared vCPU cores and a fixed RAM
 | | Core VPS | Performance VPS | Storage VPS |
 |---|---|---|---|
 | **Plans** | Cloud VPS 4 – 18 | Cloud VPS Plus 4 – 18 | Storage VPS 10 – 50 |
-| **CPU** | Shared vCPUs, multiple CPU generations | Shared vCPUs, current-generation AMD EPYC | Shared vCPUs |
+| **CPU** | Shared vCPUs, multiple CPU generations | Shared vCPUs, latest AMD EPYC generations | Shared vCPUs |
 | **vCPU / RAM** | 4 – 18 vCPUs / 8 – 96 GB | 4 – 18 vCPUs / 8 – 96 GB | 2 – 14 vCPUs / 4 – 50 GB |
 | **Storage** | 100 – 600 GB SSD | 150 – 900 GB PCIe Gen 4 NVMe | 300 GB – 1.4 TB SSD |
 | **Mbit/s Port** | 200 – 1,000 | 500 – 1,000 | 200 – 1,000 |
 | **Snapshots** | 1 – 3, per plan (see table) | 5 | — |
 | **Auto Backup add-on** | Available | Available | — |
-| **Hardware changes** | Storage Extension | Storage Extension | Storage Extension; CPU and RAM fixed |
+| **Storage Extension add-on** | Available | Available | — |
 
 Operating systems, 1-Click apps and custom images per family: see [Images](/docs/servers-hosting/images/).
 
@@ -48,7 +48,7 @@ Core VPS is the entry plan family: shared vCPU cores on infrastructure spanning 
 
 ## Performance VPS {#performance-vps}
 
-Performance VPS is the upper plan family: shared vCPU cores on current-generation AMD EPYC CPUs with PCIe Gen 4 NVMe storage and higher port speeds on the smaller plans. Resources remain shared at the hypervisor level; GPU VPS is built on the Cloud VPS Plus 18 tier.
+Performance VPS is the upper plan family: shared vCPU cores on the latest AMD EPYC generations with PCIe Gen 4 NVMe storage and higher port speeds on the smaller plans. Resources remain shared at the hypervisor level; GPU VPS is built on the Cloud VPS Plus 18 tier.
 
 | Model | vCPU Cores | RAM | NVMe Storage | Mbit/s Port | Traffic |
 |---|---|---|---|---|---|
@@ -90,9 +90,9 @@ Storage VPS is the storage-heavy plan family: shared vCPU cores and a large SSD 
 | **Snapshots** | Image of the VPS disk, retained for 30 days; slots per family as in Products at a Glance |
 | **Auto Backup** | Add-on for Core VPS and Performance VPS — [VPS Auto Backup](/docs/servers-hosting/vps-auto-backup/) |
 | **Rescue System** | Live system booted into RAM from the Control Panel (see below) |
-| **Storage Extension** | Add-on; additional storage of the plan's type |
+| **Storage Extension** | Add-on for Core VPS and Performance VPS; additional storage of the plan's type |
 | **Images** | OS, 1-Click and custom images — [Images](/docs/servers-hosting/images/) |
-| **Windows Server** | Contabo-provided license |
+| **Windows Server** | Add-on; Contabo-provided license |
 
 ---
 
@@ -106,7 +106,7 @@ The Rescue System, started from the Control Panel, boots a live system into RAM.
 
 - **Upgrade:** in place via Control Panel to a larger plan within the same plan family; the IP address is kept.
 - **Region migration:** live migration (data preserved) or fresh setup (data erased); both IPv4 and IPv6 addresses change.
-- **Storage Extension:** adds storage of the plan's type.
+- **Storage Extension:** adds storage of the plan's type (Core VPS and Performance VPS only).
 - **Reinstall:** the IP address is unchanged.
 
 ---
@@ -135,7 +135,7 @@ EU · United Kingdom · USA (3 locations) · Singapore · Japan · India · Aust
 
 - Nested virtualization is not supported on any VPS plan family.
 - CPU and RAM are dedicated allocations but shared at the hypervisor level.
-- Storage VPS: no snapshots, no Auto Backup add-on; CPU and RAM are fixed per plan.
+- Storage VPS: no snapshots, no Auto Backup add-on and no Storage Extension.
 - No direct downgrade: requires a new smaller server, manual data migration and cancellation of the original — the IP address changes.
 - No direct conversion between Core VPS, Performance VPS and Storage VPS, nor to Max Performance VPS — same procedure as a downgrade.
 - Moving from SSD to NVMe means moving from Core VPS or Storage VPS to Performance VPS and requires a reinstall — all data is erased.

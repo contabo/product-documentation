@@ -3,7 +3,7 @@ title: "Dedicated Servers"
 description: "Dedicated Servers: single-tenant bare-metal servers with AMD Ryzen 9, AMD EPYC Genoa, or AMD EPYC Turin CPUs, ECC RAM, NVMe/SSD/HDD storage, and IPMI access."
 lead: "Single-tenant bare-metal servers with full hardware access and IPMI remote management."
 date: 2026-06-25
-lastmod: 2026-09-21
+lastmod: 2026-09-23
 draft: false
 weight: 40
 toc: true
@@ -12,7 +12,7 @@ toc: true
 
 Dedicated Servers — also referred to as Bare Metal — are single-tenant physical machines where every resource (CPU, RAM, storage, and network) belongs exclusively to one customer. There are no shared hypervisors, no neighboring tenants, and no resource contention. You either run the OS directly on the hardware or install your own hypervisor to create your own virtualized environment.
 
-The lineup includes AMD Ryzen 9 (consumer-grade), AMD EPYC Genoa, and AMD EPYC Turin (9th gen) processors. Refurbished servers with fixed configurations are sold as **Server Deals** (contabo.com/en/server-outlet/), subject to availability.
+The lineup includes AMD Ryzen 9 (consumer-grade), AMD EPYC Genoa, and AMD EPYC Turin (9th gen) processors. Servers from older hardware generations with fixed configurations are sold as **Server Deals** (contabo.com/en/server-outlet/), subject to availability.
 
 ---
 
@@ -42,7 +42,7 @@ The lineup includes AMD Ryzen 9 (consumer-grade), AMD EPYC Genoa, and AMD EPYC T
 | **Provisioning** | Standard configurations within 90 minutes of payment confirmation |
 | **GPU add-on** | NVIDIA GeForce GT 1030 or NVIDIA Tesla A2; CUDA supported |
 | **Nested virtualization** | Full hypervisor support — Proxmox VE, KVM, XenServer, VMware, Hyper-V |
-| **Remote management** | IPMI and KVM-over-IP: out-of-band console including pre-boot and BIOS-level access, independent of the installed OS |
+| **Remote management** | IPMI: out-of-band console, independent of the installed OS |
 | **IP addresses** | 1 static IPv4 + /64 IPv6 subnet per server; up to 25 additional IPv4 — [IP Assignment](/docs/network-services/ip-assignment/) |
 | **DNS and reverse DNS** | Managed in the Control Panel — [DNS Management](/docs/network-services/dns-management/) |
 | **DDoS protection** | Always-on, network-level, automatic |
@@ -64,16 +64,6 @@ The Rescue System, started from the Control Panel, boots a live system into RAM.
 
 ---
 
-## Management & DevOps
-
-- **Customer Control Panel**: server management, reinstall, rescue system, DNS and reverse DNS
-- **Contabo API** (`api.contabo.com`): RESTful; OAuth2 authentication with client ID, client secret and an API user password created in the Control Panel
-- **CLI (`cntb`)**: open-source command-line client (github.com/contabo/cntb)
-- **cloud-init**: user-data scripts at boot
-- **SSH keys**: injected at deployment
-
----
-
 ## Availability & Locations
 
 Deployed across **11 locations** in **9 regions**:
@@ -88,6 +78,7 @@ EU · United Kingdom · USA (3 locations) · Singapore · Japan · India · Aust
 - Hardware changes may require downtime and a hardware swap; a storage type change (e.g. SSD → NVMe) requires a reinstall — all data is erased.
 - Region migration is not available — Dedicated Servers cannot be moved to another location.
 - Snapshots and the Auto Backup add-on are not available.
-- The Control Panel Firewall and Private Networking add-ons are not offered — use the OS firewall and configure isolated networks on the server.
+- Dedicated Servers are managed in the Control Panel only; the Contabo API and CLI do not cover them.
+- The Control Panel Firewall add-on is not offered — use the OS firewall. A Dedicated Private Network is available on request.
 - Bandwidth upgrade packages are not offered.
 - GPU add-ons are subject to availability per configuration and location.

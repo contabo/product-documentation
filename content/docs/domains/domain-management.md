@@ -3,7 +3,7 @@ title: "Domain Management"
 description: "Registering, transferring and managing domains with Contabo: 300+ TLDs, Control Panel workflow, contact handles, nameservers, transfer requirements and DNS."
 lead: "Register, transfer and manage domains from the Customer Control Panel."
 date: 2026-09-22
-lastmod: 2026-09-22
+lastmod: 2026-09-23
 draft: false
 weight: 10
 toc: true
@@ -63,7 +63,7 @@ Transfers typically complete within **5 to 7 days** because of the ICANN verific
 
 ## Domain Lifecycle
 
-Domains are registered for a fixed period and renewed regularly. Renewal reminders are sent before expiry; an expired domain passes through a grace period (recoverable), then a redemption phase (recovery with additional effort), and finally becomes publicly available again. Registrant data is held in the WHOIS system; registrar-provided privacy services can replace personal data with proxy contact details.
+Domains are registered for a fixed period with auto-renewal enabled. Renewal reminders are sent before expiry; an expired domain passes through a grace period (recoverable), then a redemption phase (recovery with additional effort), and finally becomes publicly available again. Registrant data is held in the WHOIS system; registrar-provided privacy services can replace personal data with proxy contact details.
 
 ---
 
