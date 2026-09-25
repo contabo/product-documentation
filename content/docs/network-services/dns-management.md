@@ -3,7 +3,7 @@ title: "DNS Management"
 description: "Contabo DNS Management: nameservers ns1 to ns3.contabo.net, record types, TTL rules, zone creation in the Control Panel and reverse DNS for IPv4 and IPv6."
 lead: "Nameservers, DNS zones and records, TTL rules and reverse DNS in the Control Panel."
 date: 2026-09-22
-lastmod: 2026-09-23
+lastmod: 2026-09-25
 draft: false
 weight: 30
 toc: true
@@ -23,7 +23,7 @@ DNS zones for domains registered with Contabo or with a third-party registrar ca
 | `ns2.contabo.net` | 178.238.234.231 | 2a02:c205:0:0891::1 |
 | `ns3.contabo.net` | 5.189.191.29 | 2a02:c207:0:0842::1 |
 
-Domains registered through Contabo are assigned `ns2.contabo.net` and `ns3.contabo.net` by default; custom nameservers can be entered instead.
+Domains registered through Contabo are assigned `ns1.contabo.net`, `ns2.contabo.net` and `ns3.contabo.net` by default; custom nameservers can be entered instead.
 
 ---
 
