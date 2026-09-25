@@ -3,7 +3,7 @@ title: "Domain Management"
 description: "Registering, transferring and managing domains with Contabo: 300+ TLDs, Control Panel workflow, contact handles, nameservers, transfer requirements and DNS."
 lead: "Register, transfer and manage domains from the Customer Control Panel."
 date: 2026-09-22
-lastmod: 2026-09-23
+lastmod: 2026-09-25
 draft: false
 weight: 10
 toc: true
@@ -32,7 +32,7 @@ The complete list of registrable TLDs is shown in the Control Panel when enterin
 1. Start a domain registration in the Control Panel.
 2. Enter the domain name and select the extension; the contract period is displayed.
 3. Provide contact handles: **Owner** and **Admin** are mandatory; **Tech** and **Zone** are prefilled with Contabo defaults. Owner data must be valid per ICANN requirements.
-4. Choose nameservers: Contabo default (`ns2.contabo.net`, `ns3.contabo.net`, configured automatically) or custom nameservers for external DNS.
+4. Choose nameservers: Contabo default (`ns1.contabo.net`, `ns2.contabo.net`, `ns3.contabo.net`, configured automatically) or custom nameservers for external DNS — see [DNS Management](/docs/network-services/dns-management/) for the nameserver addresses.
 5. Choose the assignment: no assignment (configure DNS later), an existing Contabo server from the account, or a custom IP address.
 6. Review and place the binding order.
 
